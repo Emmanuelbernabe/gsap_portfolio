@@ -22,5 +22,15 @@
     "gsap": "^3.9.1",
     "lil-gui": "^0.17.0",
     "three": "^0.148.0"
-  }
+  },
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emmanuelbernabe/gsap_portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Emmanuelbernabe/gsap_portfolio/issues"
+  },
+  "homepage": "https://github.com/Emmanuelbernabe/gsap_portfolio#readme",
+  "description": ""
 }
