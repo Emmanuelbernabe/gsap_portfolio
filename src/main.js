@@ -191,3 +191,15 @@ const tick = () =>
 }
 
 tick()
+
+// gsap
+
+let homeLoadTl = gsap.timeline()
+.from('.h1__test', {
+  scale:0,
+  y:'3rem',
+  duration: 5,
+  ease: 'Quart.easeInOut',
+  stagger: 0.1,
+  delay: 0.3,
+}, 0)
