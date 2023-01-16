@@ -37,7 +37,7 @@ const scene = new THREE.Scene()
 const gltfLoader = new GLTFLoader()
 
 gltfLoader.load(
-    '/dist/glTF/Computers.glb',
+    'https://uploads-ssl.webflow.com/63ab01e1aec5f31e3b885780/63c55bf04440ed5e9c201f39_Computers.glb.txt',
     (gltf) =>
     scene.add(gltf.scene)
    )
