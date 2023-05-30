@@ -23,7 +23,7 @@ function webgl() {
  }
  
  document.querySelector('.hero__time').textContent = new Date().toLocaleTimeString('en-GB', time);
-
+ document.querySelector('.hero__time-mob').textContent = new Date().toLocaleTimeString('en-GB', time);
 /**
  * Loaders
  */
