@@ -4,9 +4,10 @@ import * as THREE from 'three'
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from 'gsap/all';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { DrawSVGPlugin } from 'gsap/all';
 
 
-gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother, DrawSVGPlugin);
 function loader() {
 
     // smooth scroll
@@ -458,7 +459,7 @@ gsap.timeline({
       trigger: ".is--about",
       pin: true,
       start: "top",
-      end: "+=2000",
+      end: "+=1500",
       scrub: true,
     },
     defaults: {
@@ -524,7 +525,7 @@ gsap.timeline({
     ".project__wrapper",
     {
       delay: 0.2,
-      scale: 1.1,
+      scale: 1.2,
     },
     "start"
   )
@@ -536,18 +537,20 @@ gsap.timeline({
     },
     "start"
   )
-  .to(
-    ".about__wrapper",
-    {
-      display: "none"
-    },
-    "start"
-  )
-  .to(".about__img", 
-  {
-    opacity: 0,
-  });
 
+//svg draw slider
+
+gsap.fromTo(".arrow--white", {
+  drawSVG:"0%",
+}, {
+  drawSVG:"100%",
+  duration: 1.2,
+  scrollTrigger:{
+    trigger:'.arrow--white',
+    start: 'bot 50%',                    
+    toggleActions: "play none none reverse",
+  }
+});
 
 /**
  * Slider
@@ -562,7 +565,7 @@ gsap.timeline({
     opacity: 1,
     scrollTrigger:{
       trigger:'.one',
-      start: 'top -100%',                    
+      start: 'bot 50%',                    
       toggleActions: "play none none reverse",
     }
   });
@@ -575,7 +578,7 @@ gsap.timeline({
     opacity: 1,
     scrollTrigger:{
       trigger:'.two',
-      start: 'top -100%',                    
+      start: 'bot 50%',                    
       toggleActions: "play none none reverse",
     }
   });
@@ -589,7 +592,7 @@ gsap.timeline({
     opacity: 1,
     scrollTrigger:{
       trigger:'.three',
-      start: 'top -100%',                    
+      start: 'bot 50%',                    
       toggleActions: "play none none reverse",
     }
   });
@@ -603,7 +606,7 @@ gsap.timeline({
     opacity: 1,
     scrollTrigger:{
       trigger:'.four',
-      start: 'top -100%',                    
+      start: 'bot 50%',                    
       toggleActions: "play none none reverse",
     }
   });
@@ -617,7 +620,7 @@ gsap.timeline({
     opacity: 1,
     scrollTrigger:{
       trigger:'.five',
-      start: 'top -100%',                    
+      start: 'bot 50%',                    
       toggleActions: "play none none reverse",
     }
   });
@@ -631,7 +634,7 @@ gsap.timeline({
     opacity: 1,
     scrollTrigger:{
       trigger:'.six',
-      start: 'top -100%',                    
+      start: 'bot 50%',                    
       toggleActions: "play none none reverse",
     }
   });
@@ -666,6 +669,49 @@ gsap.timeline({
 }
 
 setupSplits();
+
+//svg draw footer
+
+gsap.fromTo(".arrow--footer", {
+  drawSVG:"0%",
+}, {
+  drawSVG:"100%",
+  duration: 1,
+  scrollTrigger:{
+    trigger:'.arrow--footer',
+    start: 'bot 70%',                    
+    toggleActions: "play none none reverse",
+  }
+});
+
+gsap.fromTo(".link--mail", {
+  y: '5rem',
+  opacity: 0
+}, {
+  y:'0rem', 
+  duration: 0.8,
+  opacity: 1,
+  scrollTrigger:{
+    trigger:'.link--mail',
+    start: 'bot 95%',                    
+    toggleActions: "play none none reverse",
+  }
+});
+
+gsap.fromTo(".link--lkd", {
+  y: '5rem',
+  opacity: 0
+}, {
+  y:'0rem', 
+  duration: 0.8,
+  opacity: 1,
+  scrollTrigger:{
+    trigger:'.link--lkd',
+    start: 'bot 95%',                    
+    toggleActions: "play none none reverse",
+  }
+});
+
 }
 
 export default loader
