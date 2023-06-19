@@ -194,6 +194,7 @@ for(let i = 0; i < particlesCount; i++)
     positions[i * 3 + 2] = (Math.random() - 0.5) * 20
 }
 
+
 const particlesGeometry = new THREE.BufferGeometry()
 particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
 
@@ -203,6 +204,7 @@ const particlesMaterial = new THREE.PointsMaterial({
     sizeAttenuation: true,
     size: 0.03
 })
+
 
 // Points
 const particles = new THREE.Points(particlesGeometry, particlesMaterial)
@@ -219,7 +221,10 @@ const clock = new THREE.Clock()
 const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
-
+    if(particles){
+        particles.rotation.y = Math.sin(elapsedTime) / 15
+    
+    }
     // targetX = mouseX * 0.0001
     // targetY = mouseY * 0.0001
 

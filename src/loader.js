@@ -538,19 +538,6 @@ gsap.timeline({
     "start"
   )
 
-//svg draw slider
-
-gsap.fromTo(".arrow--white", {
-  drawSVG:"0%",
-}, {
-  drawSVG:"100%",
-  duration: 1.2,
-  scrollTrigger:{
-    trigger:'.arrow--white',
-    start: 'bot 50%',                    
-    toggleActions: "play none none reverse",
-  }
-});
 
 /**
  * Slider
@@ -634,6 +621,20 @@ gsap.fromTo(".arrow--white", {
     opacity: 1,
     scrollTrigger:{
       trigger:'.six',
+      start: 'bot 50%',                    
+      toggleActions: "play none none reverse",
+    }
+  });
+
+  gsap.fromTo(".p7", {
+    y: '3rem',
+    opacity: 0
+  }, {
+    y:'0rem', 
+    duration: 0.8,
+    opacity: 1,
+    scrollTrigger:{
+      trigger:'.seven',
       start: 'bot 50%',                    
       toggleActions: "play none none reverse",
     }
