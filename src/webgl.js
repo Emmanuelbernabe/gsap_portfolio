@@ -222,8 +222,10 @@ const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
     if(particles){
-        particles.rotation.y = Math.sin(elapsedTime) / 15
-    
+       // particles.rotation.x = Math.sin(elapsedTime) / 35
+        particles.rotation.x = Math.sin(elapsedTime)  / 100;
+		particles.rotation.y = Math.sin(elapsedTime)  / 100;
+		particles.rotation.z = Math.sin(elapsedTime)  / 100;
     }
     // targetX = mouseX * 0.0001
     // targetY = mouseY * 0.0001
