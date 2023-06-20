@@ -37,31 +37,6 @@ ScrollTrigger.matchMedia({
   // large
   "(min-width: 992px)": function() {
 
-    // CURSOR 
-
-    gsap.to (".cursor", {
-      display: "flex", 
-    })
-    
-  
-    const cursor = document.querySelector('.cursor');
-    
-  
-    gsap.set(cursor, {
-        xPercent: -50,
-        yPercent: -50,
-    });
-    
-  
-  
-    document.addEventListener('pointermove', movecursor);
-    function movecursor(e) {
-        gsap.to(cursor, {
-            duration: 0.3,
-            x: e.clientX,
-            y: e.clientY,
-        }); 
-      }    
 
 
     // button loader
